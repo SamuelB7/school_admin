@@ -17,10 +17,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker\Factory::create();
 
         $admin = User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@email.com',
+            'document_id' => $faker->randomNumber(null) ,
+            'phone' => $faker->phoneNumber(),
+            'address' => $faker->address(),
             'password' => Hash::make('12345678')
         ]);
 
@@ -29,6 +33,9 @@ class UserSeeder extends Seeder
         $secretary = User::factory()->create([
             'name' => 'Secretary',
             'email' => 'secretary@email.com',
+            'document_id' => $faker->randomNumber(null) ,
+            'phone' => $faker->phoneNumber(),
+            'address' => $faker->address(),
             'password' => Hash::make('12345678')
         ]);
 
@@ -37,6 +44,9 @@ class UserSeeder extends Seeder
         $treasurer = User::factory()->create([
             'name' => 'Treasurer',
             'email' => 'treasurer@email.com',
+            'document_id' => $faker->randomNumber(null) ,
+            'phone' => $faker->phoneNumber(),
+            'address' => $faker->address(),
             'password' => Hash::make('12345678')
         ]);
 
@@ -45,6 +55,9 @@ class UserSeeder extends Seeder
         $professor1 = User::factory()->create([
             'name' => 'Professor1',
             'email' => 'professor1@email.com',
+            'document_id' => $faker->randomNumber(null) ,
+            'phone' => $faker->phoneNumber(),
+            'address' => $faker->address(),
             'password' => Hash::make('12345678')
         ]);
 
@@ -53,6 +66,9 @@ class UserSeeder extends Seeder
         $professor2 = User::factory()->create([
             'name' => 'Professor2',
             'email' => 'professor2@email.com',
+            'document_id' => $faker->randomNumber(null) ,
+            'phone' => $faker->phoneNumber(),
+            'address' => $faker->address(),
             'password' => Hash::make('12345678')
         ]);
 
@@ -61,18 +77,22 @@ class UserSeeder extends Seeder
         $professor3 = User::factory()->create([
             'name' => 'Professor3',
             'email' => 'professor3@email.com',
+            'document_id' => $faker->randomNumber(null) ,
+            'phone' => $faker->phoneNumber(),
+            'address' => $faker->address(),
             'password' => Hash::make('12345678')
         ]);
 
         $professor3->assignRole('professor');
 
-        $faker = Faker\Factory::create();
-
-        for($i = 0; $i < 200; $i++) {
+        for($i = 0; $i < 100; $i++) {
             $student = null;
             $student = User::factory()->create([
                 'name' => $faker->name(),
                 'email' => "student$i@email.com",
+                'document_id' => $faker->randomNumber(null) ,
+                'phone' => $faker->phoneNumber(),
+                'address' => $faker->address(),
                 'password' => Hash::make('12345678')
             ]);
 
