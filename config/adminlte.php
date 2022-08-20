@@ -297,17 +297,17 @@ return [
         ['header' => 'MENU'],
         [
             'text' => 'Dashboard',
-            'url'  => '',
+            'url'  => '/home',
             'icon' => 'fas fa-fw  fa-tachometer-alt',
         ],
         [
-            'text' => 'Usuários',
+            'text' => 'Users',
             'url'  => 'users',
             'can'  =>  'user-show',
             'icon' => 'fas fa-fw  fa-user',
             'submenu' => [
                 [
-                    'text' => 'Lista',
+                    'text' => 'List',
                     'url'  => 'users/',
                     'can'  =>  'user-show',
                 ]
