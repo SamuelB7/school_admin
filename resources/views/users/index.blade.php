@@ -13,7 +13,7 @@
                 
             </div>
             <div class="col text-right">
-                <a href="" class='btn btn-primary'>
+                <a href="{{ Route('users.create') }}" class='btn btn-primary'>
                     <i class='fas fa-plus'></i>
                     Add new user
                 </a>
@@ -22,8 +22,15 @@
 
         <div class="row">
             <div class="col-12 mt-4">
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{$message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <x-adminlte-card title="Users table" theme="dark" icon="fas fa-fw  fa-user">
-
 
                     <table class='table table-striped'>
                         <thead classe='h5'>

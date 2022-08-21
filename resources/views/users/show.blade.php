@@ -36,7 +36,36 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="tab-pane active" id="details">
-                                <h1>Details</h1>
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="mr-2">Name:</label>
+                                        <p>{{$user->name}}</p>
+
+                                        <label class="mr-2">Email:</label>
+                                        <p>{{$user->email}}</p>
+
+                                        <label class="mr-2">Phone:</label>
+                                        <p>{{$user->phone}}</p>
+                                    </div>
+                                    <div class="col">
+                                        <label class="mr-2">Address:</label>
+                                        <p>{{$user->address}}</p>
+
+                                        <label class="mr-2">Document ID:</label>
+                                        <p>{{$user->document_id}}</p>
+
+                                        <label class="mr-2">Role:</label>
+                                        <p>{{$user->getRoleNames()->first()}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <a href="{{ Route('users.edit', $user->id) }}" class="btn btn-sm btn-warning mr-2">Edit</a>
+                                <form action="{{ Route('users.destroy', $user->id) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button onclick=" return confirm('Are you sure?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
                             </div>
                             <div class="tab-pane" id="otherdetail">
                                 <h1>otherdetails</h1>
