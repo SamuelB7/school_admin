@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +27,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => 'auth:web'], function () {
     
     Route::resource('users', UserController::class);
+
+    Route::resource('courses', CourseController::class);
+
+    Route::resource('subjects', SubjectController::class);
 
 });

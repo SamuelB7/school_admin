@@ -298,18 +298,44 @@ return [
         [
             'text' => 'Dashboard',
             'url'  => '/home',
-            'icon' => 'fas fa-fw  fa-tachometer-alt',
+            'icon' => 'fas fa-fw fa-tachometer-alt',
         ],
         [
             'text' => 'Users',
             'url'  => 'users',
             'can'  =>  'user-show',
-            'icon' => 'fas fa-fw  fa-user',
+            'icon' => 'fas fa-fw fa-user',
             'submenu' => [
                 [
                     'text' => 'List',
                     'url'  => 'users/',
                     'can'  =>  'user-show',
+                ]
+            ]
+        ],
+        [
+            'text' => 'Courses',
+            'url'  => 'courses',
+            'can'  =>  'course-show',
+            'icon' => 'fas fa-fw fa-book',
+            'submenu' => [
+                [
+                    'text' => 'List',
+                    'url'  => 'courses',
+                    'can'  =>  'course-show',
+                ]
+            ]
+        ],
+        [
+            'text' => 'Subjects',
+            'url'  => 'subjects',
+            'can'  =>  'subject-show',
+            'icon' => 'fas fa-fw fa-bookmark',
+            'submenu' => [
+                [
+                    'text' => 'List',
+                    'url'  => 'subjects',
+                    'can'  =>  'subject-show',
                 ]
             ]
         ],

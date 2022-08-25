@@ -25,6 +25,14 @@ class PermissionSeeder extends Seeder
             'user-show',
             'user-edit',
             'user-delete',
+            'course-create',
+            'course-show',
+            'course-edit',
+            'course-delete',
+            'subject-create',
+            'subject-show',
+            'subject-edit',
+            'subject-delete',
         ];
 
         foreach($permissions as $permission) {

@@ -85,7 +85,7 @@ class UserSeeder extends Seeder
 
         $professor3->assignRole('professor');
 
-        for($i = 0; $i < 100; $i++) {
+        for($i = 0; $i < 50; $i++) {
             $student = null;
             $student = User::factory()->create([
                 'name' => $faker->name(),

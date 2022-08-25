@@ -58,15 +58,16 @@
                                         <p>{{$user->getRoleNames()->first()}}</p>
                                     </div>
                                 </div>
+                                <div class="d-flex">
+                                    <a href="{{ Route('users.edit', $user->id) }}" class="btn btn-sm btn-warning mr-2">Edit</a>
+                                    <form action="{{ Route('users.destroy', $user->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button onclick=" return confirm('Are you sure?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="d-flex">
-                                <a href="{{ Route('users.edit', $user->id) }}" class="btn btn-sm btn-warning mr-2">Edit</a>
-                                <form action="{{ Route('users.destroy', $user->id) }}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button onclick=" return confirm('Are you sure?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                </form>
-                            </div>
+                            
                             <div class="tab-pane" id="otherdetail">
                                 <h1>otherdetails</h1>
                             </div>

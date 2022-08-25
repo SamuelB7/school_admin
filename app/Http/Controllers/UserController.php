@@ -16,12 +16,16 @@ class UserController extends Controller
     }
 
     public function create() {
+        $this->can('user-create');
+
         $roles = \Spatie\Permission\Models\Role::all();
 
         return view('users.form', compact('roles'));
     }
     
     public function store(Request $request) {
+        $this->can('user-create');
+
         $validate = $request->validate(
             [
                 'name' => 'required',
@@ -44,12 +48,16 @@ class UserController extends Controller
     }
 
     public function show($id) {
+        $this->can('user-show');
+
         $user = User::find($id);
 
         return view('users.show', compact('user'));
     }
 
     public function edit($id) {
+        $this->can('user-edit');
+
         $user = User::find($id);
         $roles = \Spatie\Permission\Models\Role::all();
 
@@ -57,6 +65,8 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id) {
+        $this->can('user-edit');
+
         $validate = $request->validate(
             [
                 'name' => 'required',
@@ -83,6 +93,8 @@ class UserController extends Controller
     }
 
     public function destroy($id) {
+        $this->can('user-delete');
+
         $user = User::find($id);
 
         $user->delete();

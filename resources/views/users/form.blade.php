@@ -22,7 +22,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-8">
-                <x-adminlte-card title="{{ isset($user->id) ? 'Edit User' : 'Cadastrar Usuário' }}" theme="dark" icon="">
+                <x-adminlte-card title="{{ isset($user->id) ? 'Edit User' : 'Create user' }}" theme="dark" icon="">
                     <form @if(isset($user)) action="{{ Route('users.update', $user->id) }}" @else action="{{ Route('users.store') }}" @endif method="post">
                         @csrf
                         @if (isset($user->id))
